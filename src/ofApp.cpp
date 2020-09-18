@@ -33,8 +33,8 @@ void ofApp::setup()
     aa.update() ;
 
     // numerical analysis parameters -----
-    goal = 0.00005 ;
-    error = 999999.99 ;
+    goal = 3.9 ;
+    error = 999.0 ;
 
     double temp_error ;
     // iteration difference equation for Laplace equation solve
