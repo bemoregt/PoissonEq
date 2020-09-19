@@ -10,6 +10,7 @@
 - Left image is boundary condition space and right image is steady state space.
 - Poisson Equation's solution is steady state of 2d space in this case.
 - Differential equation is converted to difference equation for computer calculation.
+- Poisson difference equation is extracted from u(x,u) function's Taylor series(simple finite element method).
 
 ### Dependency
 - OpenFrameworks 0.11.0
