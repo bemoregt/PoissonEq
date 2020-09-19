@@ -15,10 +15,10 @@ double rho(double x, double y){
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-    // Use only 1 double number for each Mat point:
+    // 2d simulation space init
     data = Mat::zeros( 64, 64, CV_64F ) ;
     data2 = Mat::zeros( 64, 64, CV_64F ) ;
-    // Initial Boundary condition -----------
+    // Initial Boundary condition 
     for( int i = 0 ; i < 64 ; i++ ){
         data.at<double>( 0, i ) = 1.0;
         data.at<double>( i, 0 ) = 1.0;
@@ -26,9 +26,9 @@ void ofApp::setup()
         data2.at<double>( i, 0 ) = 1.0;
     }
     data = data * 255;
-    // Convert double values to integer values to make the Mat
-    // convertible to ofImage
+    // Convert double to Byte
     data.convertTo( data, CV_8U );
+    // convertible to ofImage
     toOf(data, aa);
     aa.update() ;
 
@@ -38,7 +38,6 @@ void ofApp::setup()
 
     double temp_error ;
     // iteration difference equation for Laplace equation solve
-    // this loop has no prolem in mathmatical logics
     t=0;
     while( error > goal ){
         error = 0.0 ;
@@ -59,11 +58,11 @@ void ofApp::setup()
     }// while
     // Convert point values from [0..1] range to [0..255] range
     data2 = data2 * 255;
-    // Convert double values to integer values to make the Mat
-    // convertible to ofImage
+
     data2.convertTo( data2, CV_8U );
     toOf(data2, bb);
     bb.update() ;
+    
     ofLog() << "Iter= " << t;
 }
 
@@ -76,7 +75,9 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofSetColor(0, 200, 120);
+    // boundary condition display
     aa.draw(0, 0, 512, 512);
+    // my goaled steady state display
     bb.draw(513, 0, 512, 512);
 }
 
