@@ -3,6 +3,9 @@
 
 ![Solved example]( https://github.com/bemoregt/PoissonEq/blob/master/scrshot.png "example")
 
+![Differential Equation](https://github.com/bemoregt/PoissonEq/blob/master/174a0597a684dbb96.png)
+- Poisson & Laplace Equation 
+
 ### Algorithm
 - Left image is boundary condition space and right image is steady state space.
 - Poisson Equation's solution is steady state of 2d space in this case.
