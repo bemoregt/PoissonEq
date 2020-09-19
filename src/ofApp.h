@@ -28,11 +28,12 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-    ofImage aa, bb;
-    double goal;
-    double error;
-    cv::Mat data;
-    cv::Mat data2;
-    double temp_error ;
-    int t;
+    	ofImage aa, bb;		// for poisson space display
+    	double goal;
+    	double error;
+	
+    	cv::Mat data;		// for doundary condition
+    	cv::Mat data2;		// for steady state
+    	double temp_error ;
+    	int t;			// iteration count
 };
